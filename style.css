@@ -1,0 +1,20 @@
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.custom-button {
+    display: block;
+    margin-top: 30px;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.card {
+    margin-top: 50px;
+    box-shadow: 10px 10px 35px 8px rgba(0,0,0,0.23);
+    border-radius: 10px;
+
+}
