@@ -17,31 +17,41 @@
         </section>
         <section class="row card">
             <section class="justify-content-center card-body">
-              <h5 class="card-title">Generate A Password</h5>
-              <hr>
-              <section class="container row">
-                  <input type="checkbox" name="" id="">
-                  <input type="checkbox" name="" id="">
-                  <input type="checkbox" name="" id="">
-                  <input type="checkbox" name="" id="">
-              </section>
-              <hr>
-              <textarea id="genPassField" class="form-control text-center" aria-label="With textarea" placeholder="Your Secure Password"></textarea>
-             <button id="passGenerator" class="btn btn-danger mx-auto custom-button text-center" onclick="passGen()">Generate Password</button>
+                <h5 class="card-title">Generate A Password</h5>
+                <hr>
+                <section class="container row">
+                    <label class="check-box col-md-3 col-sm-6" for="">Include Upper Case Letters?
+                        <input type="checkbox" name="" id="upperCase">
+                    </label>
+                    <label class="check-box col-md-3 col-sm-6" for="">Include Lowercase Letters?
+                        <input type="checkbox" name="" id="lowerCase">
+                    </label>
+                    <label class="check-box col-md-3 col-sm-6" for="">Include Numbers?
+                        <input type="checkbox" name="" id="nums">
+                    </label>
+                    <label class="check-box col-md-3 col-sm-6" for="">Include Special Characters?
+                        <input type="checkbox" name="" id="specChar">
+                    </label>
+                </section>
+                <hr>
+                <textarea readonly id="genPassField" class="form-control text-center" aria-label="With textarea"
+                    placeholder="Your Secure Password"></textarea>
+                <button id="passGenerator" class="btn btn-danger mx-auto custom-button text-center"
+                    onclick="passGen()">Generate Password</button>
             </section>
         </section>
 
 
     </main>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
