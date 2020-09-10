@@ -1,16 +1,24 @@
 console.log("Hi there!")
 
-// make this accept an argument
-function passGen() {
-    alert("Button Works!");
-};
 
 var charsAllowed = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@%!$";
-var passLen = 10;
+
 var userPass = "";
+// make this accept an argument
+function passGen() {
+    var passLen = prompt("Please Enter the Desired Password Length");
+    passClear();
+    for (var i = 0; i < passLen; i++) {
+        userPass += charsAllowed.charAt(Math.floor(Math.random() * charsAllowed.length));
+     }
+     document.getElementById("genPassField").value = userPass;
+};
+
+function passClear() {
+    userPass= "";
+    console.log("working?")
+};
 
 
-for (var i = 0; i < passLen; i++) {
-   userPass += charsAllowed.charAt(Math.floor(Math.random() * charsAllowed.length));
-}
-console.log(userPass);
+
+
