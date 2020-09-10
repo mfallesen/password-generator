@@ -1,7 +1,7 @@
 console.log("Hi there!")
 
 
-var charsAllowed = "";
+
 // alt var charsAllowed = includeCriteria();
 var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lowercase = 'abcdefghijklmnopqrstuvwxyz';
@@ -21,7 +21,8 @@ function passGen() {
     var passLen = prompt("Please Enter the Desired Password Length in Numbers between 8 and 128");
 
     // ask User for Upper,Lower,Number, and Symbols in password
-
+    var charsAllowed = includeCriteria();
+    console.log(charsAllowed)
     // clear textarea of existing text(if any)
     passClear();
     
@@ -30,10 +31,10 @@ function passGen() {
     
     
     
-    for (var i = 0; i < passLen; i++) {
-        userPass += charsAllowed.charAt(Math.floor(Math.random() * charsAllowed.length));
-     }
-     document.getElementById("genPassField").value = userPass;
+    // for (var i = 0; i < passLen; i++) {
+    //     userPass += charsAllowed.charAt(Math.floor(Math.random() * charsAllowed.length));
+    //  }
+    //  document.getElementById("genPassField").value = userPass;
 
 
 
@@ -45,13 +46,22 @@ function passGen() {
 
 
     function includeCriteria() {
-        var includeUpper = confirm("Include Uppercase characters?");
-        if (includeUpper === true) {
-            charsAllowed 
+        
+        var charsRequested = "";
+        
+        if (document.getElementById("upperCase").checked) {
+            charsRequested += uppercase;
         }
-        var includeLower = confirm("Include Lowercase characters?");
-        var includeNumbers = confirm("Include Number characters?");
-        var includeSpecial = confirm("Include Special characters?");
+        if (document.getElementById("lowerCase").checked) {
+            charsRequested += lowercase;
+        }
+        if (document.getElementById("nums").checked) {
+            charsRequested += numbers;
+        }
+        if (document.getElementById("specChar").checked) {
+            charsRequested += symbols;
+        }
+        return charsRequested;
     };
 
 
