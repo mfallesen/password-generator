@@ -18,11 +18,13 @@
         <section class="row card">
             <section class="justify-content-center card-body">
                 <h5 class="card-title">How Long do you want you password to be?</h5>
-                <label class="col-5 " for="">Drag to select a number between 8 and 128<input id="rangeSlide" type="range" min="8" max="128" value="8"></label>
+                <!-- this is where the slider code is injected -->
+                <label class="col-5 " for="">Drag to select a number between 8 and 128<input id="rangeSlide"
+                        type="range" min="8" max="128" value="8"></label>
                 <p>Number of Characters : <span id="numUserChar"></span></p>
                 <hr>
                 <section class="container row">
-
+                    <!-- Checkboxes test for characters to use in password generator. Throws error if none are checked -->
                     <label class="check-box col-md-3 col-sm-6" for="">
                         <input type="checkbox" name="" id="upperCase">
                         Include Upper Case Letters?
@@ -41,19 +43,23 @@
                     </label>
                 </section>
                 <hr>
+                <!-- Displays Password in a read only field that the user can copy from -->
                 <textarea readonly id="genPassField" class="form-control text-center" aria-label="With textarea"
                     placeholder="Your Secure Password"></textarea>
+                <!-- Button that triggers the passGen  function when clicked to generate new password -->
                 <button id="passGenerator" class="btn btn-danger mx-auto custom-button text-center"
                     onclick="passGen()">Generate Password</button>
             </section>
         </section>
 
     </main>
+    <!-- Disclaimer -->
     <footer class="footer mt-auto py-3">
         <div class="container">
-          <span class="text-muted">These Passwords are not guaranteed nor intended to be secure. Use at your own risk!</span>
+            <span class="text-muted">Passwords generated are not guaranteed nor intended to be secure. Use at your own
+                risk!</span>
         </div>
-      </footer>
+    </footer>
 
 
 
