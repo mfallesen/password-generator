@@ -18,21 +18,26 @@
         <section class="row card">
             <section class="justify-content-center card-body">
                 <h5 class="card-title">How Long do you want you password to be?</h5>
-                <label class="col-5 " for="">Please Enter a number between 8 and 128<input type="number" min="8" max="128" class="form-control"></label>
+                <label class="col-5 " for="">Drag to select a number between 8 and 128<input id="rangeSlide" type="range" min="8" max="128" value="8"></label>
+                <p>Number of Characters : <span id="numUserChar"></span></p>
                 <hr>
                 <section class="container row">
 
-                    <label class="check-box col-md-3 col-sm-6" for="">Include Upper Case Letters?
+                    <label class="check-box col-md-3 col-sm-6" for="">
                         <input type="checkbox" name="" id="upperCase">
+                        Include Upper Case Letters?
                     </label>
-                    <label class="check-box col-md-3 col-sm-6" for="">Include Lowercase Letters?
+                    <label class="check-box col-md-3 col-sm-6" for="">
                         <input type="checkbox" name="" id="lowerCase">
+                        Include Lowercase Letters?
                     </label>
-                    <label class="check-box col-md-3 col-sm-6" for="">Include Numbers?
+                    <label class="check-box col-md-3 col-sm-6" for="">
                         <input type="checkbox" name="" id="nums">
+                        Include Numbers?
                     </label>
-                    <label class="check-box col-md-3 col-sm-6" for="">Include Special Characters?
+                    <label class="check-box col-md-3 col-sm-6" for="">
                         <input type="checkbox" name="" id="specChar">
+                        Include Special Characters?
                     </label>
                 </section>
                 <hr>
@@ -43,9 +48,12 @@
             </section>
         </section>
 
-
     </main>
-
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">These Passwords are not guaranteed nor intended to be secure. Use at your own risk!</span>
+        </div>
+      </footer>
 
 
 

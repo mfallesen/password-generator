@@ -1,54 +1,34 @@
-console.log("Hi there!")
-
-
-
-// alt var charsAllowed = includeCriteria();
 var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lowercase = 'abcdefghijklmnopqrstuvwxyz';
 var numbers = '0123456789';
 var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
 var userPass = "";
-
-
-
-
-
-
-
-
-
+// function
 function passGen() {
-    var passLen = prompt("Please Enter the Desired Password Length in Numbers between 8 and 128");
-
-    // ask User for Upper,Lower,Number, and Symbols in password
+    var passLen = document.getElementById("numUserChar").innerHTML;
+console.log(passLen)
+    // Generate user Character Set to use in password generation
     var charsAllowed = includeCriteria();
     console.log(charsAllowed)
     // clear textarea of existing text(if any)
     passClear();
+    // Generate the password
+    for (var i = 0; i < passLen; i++) {
+        userPass += charsAllowed.charAt(Math.floor(Math.random() * charsAllowed.length));
+     }
+     document.getElementById("genPassField").value = userPass;
+};
+
+
+function includeCriteria() {
+
+    var charsRequested = "";
+
     
-    
-    
-    
-    
-    
-    // for (var i = 0; i < passLen; i++) {
-    //     userPass += charsAllowed.charAt(Math.floor(Math.random() * charsAllowed.length));
-    //  }
-    //  document.getElementById("genPassField").value = userPass;
-
-
-
-
-
-
-
-    };
-
-
-    function includeCriteria() {
+    if (document.getElementById("upperCase").checked === false && document.getElementById("lowerCase").checked === false && document.getElementById("nums").checked === false && document.getElementById("specChar").checked === false) {
+        alert("You must choose at least one character set!");
         
-        var charsRequested = "";
-        
+    } else {
         if (document.getElementById("upperCase").checked) {
             charsRequested += uppercase;
         }
@@ -62,23 +42,18 @@ function passGen() {
             charsRequested += symbols;
         }
         return charsRequested;
-    };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+    
+};
 
 function passClear() {
-    userPass= "";
+    userPass = "";
     console.log("working?")
 };
+//slider code largely copied from https://www.w3schools.com/howto/howto_js_rangeslider.asp
+var slider = document.getElementById("rangeSlide");
+var output = document.getElementById("numUserChar");
+output.innerHTML = slider.value;
+slider.oninput = function () {
+    output.innerHTML = this.value;
+}

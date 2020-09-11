@@ -20,6 +20,10 @@ h1 {
 
 }
 
+#rangeSlide {
+    width: 100%;
+}
+
 #genPassField {
     resize: none;
 }
